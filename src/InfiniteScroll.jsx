@@ -1,12 +1,7 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import ldOmit from 'lodash/omit';
 import styles from './InfiniteScroll.css';
 
-/**
- * `${COMPONENT_NAME}` can be used for displaying list of items with scroll.
- */
 class InfiniteScroll extends PureComponent {
   componentDidMount(){
     if(this.infiniteListRef){
@@ -78,20 +73,5 @@ InfiniteScroll.defaultProps = {
   totalCount: 0,
   height: 100
 };
-InfiniteScroll.propTypes = {
-  /** Number of items to display in one scroll */
-  pageSize: PropTypes.number,
-  className: PropTypes.string,
-  children: PropTypes.node,
-  currentPage : PropTypes.number,
-  totalCount : PropTypes.number,
-  /** Function that has currentPage and pageSize as the parameters. Gets triggered when scroll reaches at the end position */
-  onLoadMore : PropTypes.func,
-  /** Fixed height of container of the list */
-  height : PropTypes.any,
-  /** Sets true/false if more items are to be loaded. Works if totalCount is not present */
-  hasMore: PropTypes.bool
-}
-
 
 export default InfiniteScroll
