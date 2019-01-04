@@ -4,7 +4,6 @@ import styles from './InfiniteScroll.css';
 
 class InfiniteScroll extends PureComponent {
   componentDidMount(){
-    if(this.infiniteListRef){
       this.infiniteListRef.addEventListener('scroll', () => {
         const { totalCount, currentPage, pageSize, hasMore} = this.props;
         if(totalCount ? totalCount > currentPage*pageSize : hasMore){
@@ -15,7 +14,6 @@ class InfiniteScroll extends PureComponent {
           }
         }
       })
-    }
   }
   render(){
     const {
